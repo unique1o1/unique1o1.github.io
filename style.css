@@ -18,7 +18,7 @@ button {
 }
 .bgi{
 
-	background-image: url('/home/unique/Documents/images/moonlight-night.jpg');
+	background-image: url('image.png');
 	background-size: cover;
 	height: 200px;
 	background-position: center;
