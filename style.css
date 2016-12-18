@@ -1,14 +1,54 @@
-#thisclick
-{color: green; border-radius: 25px;background-color: red;
-  border: 0px;
-  overflow: hidden;
-  width: 150px;
-  font-size: 19px;
-  height: 30px;
+
+
+
+button {
+  background-color: #046380;
+  color: #FFF;
+  border: none;
+  padding: 15px 15px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px 2px 0 #034154;
+  margin-bottom: 10px;
+  margin-left: 18px;
+  transition: opacity .2s ease-out, transform .2s ease-out, visibility .2s ease-out;
+
+}
+.bgi{
+
+	background-image: url('/home/unique/Documents/images/moonlight-night.jpg');
+	background-size: cover;
+	height: 200px;
+	background-position: center;
+	color: white;
 }
 
-hr{
+button:hover {
+  background-color: #034F66;
+}
 
-  width: 600px;
-  margin-left:0px;
+
+.hide-me {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+}
+
+
+button:active {
+  background-color: #034154;
+  box-shadow: none;
+  position: relative;
+  top: -8px;
+  left: 2px;
+}
+
+p {
+  padding: 4px 0 2px 8px;
+  line-height: 1.7;
+  border-bottom: 1px dotted #DDD;
+  list-style: none;
+  margin: 0;
 }
