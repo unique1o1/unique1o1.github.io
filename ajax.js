@@ -28,7 +28,7 @@ ourrequest.send();
 function showdata(data){
   var htmlstring='';
   for (var i = 0; i < data.length; i++) {
-    htmlstring+="<p>"+data[i].name+" is a "+ data[i].bread + " his favirote food is "+data[i].food+"</p>";
+    htmlstring+="<p>"+data[i].name+" is a "+ data[i].bread + " his favorite food is "+data[i].food+"</p>";
   }
   info.insertAdjacentHTML('beforeEnd',htmlstring);
 }
