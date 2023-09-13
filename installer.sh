@@ -253,7 +253,7 @@ get_architecture() {
             ;;
 
         MINGW* | MSYS* | CYGWIN*)
-            _ostype=pc-windows-gnu
+            _ostype=pc-windows-msvc
             ;;
 
         *)
